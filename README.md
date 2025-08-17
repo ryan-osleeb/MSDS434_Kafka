@@ -22,3 +22,14 @@ java -version
 curl -O https://downloads.apache.org/kafka/3.9.1/kafka_2.13-3.9.1.tgz \
   && tar -xzf kafka_2.13-3.9.1.tgz
 
+#### from kafka.apache.org/quickstart
+
+# Start the ZooKeeper service
+bin/zookeeper-server-start.sh config/zookeeper.properties
+# Start the Kafka broker service
+$ bin/kafka-server-start.sh config/server.properties
+
+
+bin/kafka-console-producer.sh --topic quickstart-events --bootstrap-server localhost:9092
+bin/kafka-console-consumer.sh --topic quickstart-events --from-beginning --bootstrap-server localhost:9092
+
